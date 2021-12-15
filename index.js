@@ -2,6 +2,9 @@ const express = require('express')
 const app = express();
 var FastText = require('node-fasttext');
 const cors = require('cors');
+const { log } = require('util');
+
+
 
 let config = { 
   dim: 100,
@@ -19,11 +22,12 @@ FastText.train("supervised", config, function (success, error) {
   console.log(success)
   
 })
+app.set('view engine','ejs');
 
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.sendfile("index.html");
+  res.sendfile("index.ejs");
 });
 
 app.get('/fasttext/', function(req, res) {
@@ -33,7 +37,7 @@ app.get('/fasttext/', function(req, res) {
 
 function getFastTextResults(statement) {
 	//predict returns an array with the input and predictions for best cateogires
-	FastText.predict(
+ 	FastText.predict(
 		"model.bin", 3,
 		[statement],
 		function (success, error) {
@@ -44,8 +48,11 @@ function getFastTextResults(statement) {
 		  }
 		  console.log(success)
 		})
-	return "success!";
+ document.getElementById("myinput").innerHTML([statement]);
 }
+
+
+
 
 app.listen(8000, () => {
   console.log('Listening on port 8000!')
