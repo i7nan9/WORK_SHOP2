@@ -1,15 +1,6 @@
 [![Build Status](https://app.travis-ci.com/Node3009/WORK_SHOP2.svg?branch=master)](https://app.travis-ci.com/Node3009/WORK_SHOP2) (https://app.travis-ci.com/Node3009/WORK_SHOP2.svg?branch=master)
 # WORK_SHOP2
-release by Hanan
-
-contains of: 
-logo 
-clear button
-css file for designing
-
-pros:
-new with better design, and new function(clear button).
-
-cons:
-with one request the page will end you have to open it again.
+step1\ by going to travis-ci.org
+step2\ when you enter it it will say there is a new wesite you can go there
+step3\ click on "sign in with github">> you account in github must be opened
 
